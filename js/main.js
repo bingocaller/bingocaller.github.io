@@ -8,7 +8,7 @@ $(document).ready(function() {
 			$('.copy .'+clicked).addClass('active').removeClass('not-active');
 			$('.copy').fadeIn(200, function () {
 				if ($(document).width() <= 770){
-					$(window).scrollTop($('.menu').height()+$('.header').height());
+					$(window).scrollTop($('.menu').height()+$('.header').innerHeight());
 				}
 			});
 		});
