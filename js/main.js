@@ -1,6 +1,6 @@
 function getHash () {
-	if (window.location.hash) {
-		var hash = window.location.hash.replace('#', '');
+	if (location.hash) {
+		var hash = location.hash.replace('#', '');
 		// console.log(hash);
 		fader(hash);
 	} else {
@@ -15,7 +15,7 @@ function fader (target) {
 		$('.copy > div').addClass('not-active').removeClass('active');
 		$('.copy .' + target).addClass('active').removeClass('not-active');
 		$('.copy').fadeIn(200, function () {
-			if ($(document).width() <= 770 && window.location.hash){
+			if ($(document).width() <= 770 && location.hash){
 				$(window).scrollTop($('.menu').height()+$('.header').innerHeight());
 			}
 		});
