@@ -23,7 +23,8 @@ function fader (target) {
 }
 $(document).ready(function() {
 	getHash();
-	window.onpopstate = function() {
+
+	window.onhashchange = function() {
 		getHash();
 	}
 	$('.menu li').on('click', function() {
