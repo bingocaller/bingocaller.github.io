@@ -15,7 +15,7 @@ function fader (target) {
 		$('.copy > div').addClass('not-active').removeClass('active');
 		$('.copy .' + target).addClass('active').removeClass('not-active');
 		$('.copy').fadeIn(200, function () {
-			if ($(document).width() <= 770){
+			if ($(document).width() <= 770 && window.location.hash){
 				$(window).scrollTop($('.menu').height()+$('.header').innerHeight());
 			}
 		});
@@ -28,6 +28,7 @@ $(document).ready(function() {
 	}
 	$('.menu li').on('click', function() {
 		var href = $(this).find('a').attr('href');
+		if (true) {};
 		window.location.href = window.location.origin + '/' + href;
 	});
 });
