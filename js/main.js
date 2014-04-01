@@ -27,6 +27,11 @@ $(document).ready(function() {
 		getHash();
 	}
 	$('.menu li').on('click', function() {
-		window.location.href = window.location.origin + $(this).find('a').attr('href');
+		var href = $(this).find('a').attr('href');
+		if (href.search('#')) {
+			window.location.href = window.location.origin + href;
+		} else {
+			window.location.href = window.location.origin + '/' + href;
+		}
 	});
 });
