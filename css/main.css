@@ -99,6 +99,8 @@ textarea {
 
 html, body {
 	width: 100%;
+	margin: 0;
+	padding: 0;
 	/*height: 100%;*/
 	font-size: 12pt;
 	font-family: 'Merriweather', Georgia, serif;
@@ -168,8 +170,6 @@ h1, h2, h3, h4, h5 {
 }
 
 .menu li:active {
-	-webkit-box-shadow: inset 0 0 2em rgba(0,0,0,.25);
-	-moz-box-shadow: inset 0 0 2em rgba(0,0,0,.25);
 	box-shadow: inset 0 0 2em rgba(0,0,0,.25);
 }
 
