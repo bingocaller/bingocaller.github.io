@@ -28,8 +28,11 @@ $(document).ready(function() {
 	}
 	$('.menu li').on('click', function() {
 		var href = $(this).find('a').attr('href');
-		if (true) {};
-		window.location.href = window.location.origin.replace('undefined/','') + '/' + href;
+		if (window.location.origin.indexOf('undefined') !== -1) {
+			window.location.href = window.location.origin.replace('undefined','') + '/' + href;
+		} else {
+			window.location.href = window.location.origin + '/' + href;
+		}
 	});
 	$('.menu li a').on('click', function(event) {
 		event.stopPropagation();
