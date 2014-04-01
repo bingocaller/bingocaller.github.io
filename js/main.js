@@ -27,7 +27,7 @@ $(document).ready(function() {
 		getHash();
 	}
 	$('.menu li').on('click', function() {
-		var hash = $(this).find('a').attr('href');
+		var href = $(this).find('a').attr('href');
 		window.location.href = window.location.origin + '/' + href;
 	});
 });
