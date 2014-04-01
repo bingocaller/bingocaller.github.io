@@ -26,4 +26,8 @@ $(document).ready(function() {
 	window.onpopstate = function() {
 		getHash();
 	}
+	$('.menu li').on('click', function() {
+		var hash = $(this).find('a').attr('href').replace('#','');
+		fader(hash);
+	});
 });
