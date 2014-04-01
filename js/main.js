@@ -31,4 +31,7 @@ $(document).ready(function() {
 		if (true) {};
 		window.location.href = window.location.origin + '/' + href;
 	});
+	$('.menu li a').on('click', function(event) {
+		event.stopPropagation();
+	});
 });
