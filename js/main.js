@@ -27,11 +27,7 @@ $(document).ready(function() {
 		getHash();
 	}
 	$('.menu li').on('click', function() {
-		var href = $(this).find('a').attr('href');
-		if (href.search('#')) {
-			window.location.href = window.location.origin + href;
-		} else {
-			window.location.href = window.location.origin + '/' + href;
-		}
+		var hash = $(this).find('a').attr('href');
+		window.location.href = window.location.origin + '/' + href;
 	});
 });
