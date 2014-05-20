@@ -19,7 +19,7 @@ textarea {
 }
 
 html {
-  font-size: 1em;
+  font-size: 15pt;
   line-height: 1.4;
 }
 
@@ -103,7 +103,6 @@ body {
   margin: 0;
   padding: 0;
   /*height: 100%;*/
-  font-size: 15pt;
   font-family: 'Merriweather', Georgia, serif;
 }
 
@@ -353,7 +352,7 @@ h5 {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 55em) {
   .menu,
   .content {
     display: block;
