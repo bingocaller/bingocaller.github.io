@@ -69,7 +69,7 @@ module.exports = function(grunt) {
 
 		uglify: {
 			build: {
-				src: 'js/production.js',
+				src: 'js/concat.js',
 				dest: 'build/js/main.min.js'
 			}
 		},
