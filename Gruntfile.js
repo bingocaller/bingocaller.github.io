@@ -4,10 +4,35 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		// Project settings
+		config: {
+			// Configurable paths
+			app: '',
+			dist: 'build'
+		},
+
+		// Empties folders to start fresh
+		clean: {
+			dist: {
+				files: [{
+					dot: true,
+					src: [
+						'.tmp',
+						'<%= config.dist %>/*',
+						'!<%= config.dist %>/.git*'
+					]
+				}]
+			},
+			server: '.tmp'
+		},
+
 		autoprefixer: {
+			options: {
+				browsers: ['> 3%']
+			},
 			dist: {
 				files: {
-					'build/css/main.css': 'css/main.css'
+					'css/main.css': 'css/main.css'
 				}
 			}
 		},
@@ -16,7 +41,7 @@ module.exports = function(grunt) {
 			report: 'gzip',
 			add_banner: {
 				options: {
-					banner: '/*! Based on HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */'
+					banner: '/* Based on HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */'
 				}
 			},
 			// minify: {
@@ -38,14 +63,14 @@ module.exports = function(grunt) {
 					'js/vendor/*.js', // All JS in the vendor folder
 					'js/*.js' // All JS in the js folder
 				],
-				dest: 'build/js/production.js',
+				dest: 'js/concat.js',
 			}
 		},
 
 		uglify: {
 			build: {
-				src: 'build/js/production.js',
-				dest: 'build/js/production.min.js'
+				src: 'js/production.js',
+				dest: 'build/js/main.min.js'
 			}
 		},
 
@@ -65,9 +90,15 @@ module.exports = function(grunt) {
 
 		htmlmin: {											// Task
 			dist: {											// Target
-				options: {									// Target options
-					removeComments: true,
-					collapseWhitespace: true
+				options: {
+					collapseBooleanAttributes: true,
+					collapseWhitespace: true,
+					removeAttributeQuotes: true,
+					removeCommentsFromCDATA: true,
+					removeEmptyAttributes: true,
+					removeOptionalTags: true,
+					removeRedundantAttributes: true,
+					useShortDoctype: true
 				},
 				files: {									// Dictionary of files
 					'build/index.html': 'index.html'	    // 'destination': 'source'
@@ -97,15 +128,23 @@ module.exports = function(grunt) {
 	});
 
 	// 3. Where we tell Grunt we plan to use this plug-in.
-	grunt.loadNpmTasks('grunt-contrib-htmlmin');
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-	grunt.registerTask('default', ['autoprefixer', 'cssmin', 'concat', 'uglify', 'imagemin', 'htmlmin']);
-
+	grunt.registerTask('default', [
+		'clean',
+		'autoprefixer',
+		'cssmin',
+		'concat',
+		'uglify',
+		'imagemin',
+		'htmlmin'
+	]);
 };
