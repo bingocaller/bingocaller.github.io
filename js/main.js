@@ -23,7 +23,6 @@ function fader (target) {
 }
 $(document).ready(function() {
 	getHash();
-
 	window.onhashchange = function() {
 		getHash();
 	}
