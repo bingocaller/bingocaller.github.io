@@ -2,17 +2,18 @@
   "name": "bingocaller.github.io",
   "version": "0.0.1",
   "devDependencies": {
+    "assert-plus": "~0.1.5",
+    "combined-stream": "0.0.4",
+    "graceful-fs": "~2.0.3",
     "grunt": "~0.4.2",
+    "grunt-autoprefixer": "^3.0.3",
+    "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-cssmin": "~0.9.0",
     "grunt-contrib-htmlmin": "~0.2.0",
-    "graceful-fs": "~2.0.3",
-    "combined-stream": "0.0.4",
-    "assert-plus": "~0.1.5",
-    "pngquant-bin": "~0.1.7",
     "grunt-contrib-imagemin": "~0.2.0",
-    "grunt-contrib-clean": "^0.5.0"
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-watch": "~0.5.3",
+    "pngquant-bin": "~0.1.7"
   }
 }
