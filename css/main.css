@@ -114,6 +114,10 @@ h5 {
   font-weight: 700;
 }
 
+h2 {
+  margin-bottom: .2em;
+}
+
 .ui {
   font-weight: 300;
 }
@@ -222,12 +226,17 @@ h5 {
 
 .header {
   position: relative;
+  margin-bottom: 1em;
 }
 
 .header .text,
 .header img {
   display: inline-block;
   vertical-align: top;
+}
+
+.detail-list {
+  margin-top: 0;
 }
 
 .copy .active {
